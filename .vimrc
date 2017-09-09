@@ -2,7 +2,7 @@
 
 set number
 set ruler                      "show location of curser on status bar
-set tabstop=4          
+set tabstop=4
 set shiftwidth=4               "Shift indent width"
 set keywordprg=man\ -a         "command mapping (K --> man)
 set smartindent
