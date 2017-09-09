@@ -2,9 +2,11 @@
 
 setlocal tabstop=2
 setlocal shiftwidth=2
+setlocal softtabstop=2
 setlocal expandtab
 setlocal autoindent
 setlocal formatoptions=croql
+filetype indent on
 nmap <F5> :w <CR> :!clear; python % <CR>
 nmap <F6> :w <CR> :!python % 
 " set foldmethod=indent
