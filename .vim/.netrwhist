@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/mnt/sdc1/data/video/musical lesson videos/backing/intermediate_backing'
+let g:netrw_dirhist_2='/home/blueisle/playground/holdem/server'
+let g:netrw_dirhist_3='/home/blueisle/.vim/temp/plugin'
+let g:netrw_dirhist_4='/Users/blueisle/playground/web/church-web/js'
+let g:netrw_dirhist_5='/Users/blueisle/playground/web/glorytothelord/include'
