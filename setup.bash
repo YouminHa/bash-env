@@ -13,19 +13,19 @@ dirList=( .vim )
 
 # backup old dirs and files
 for f in "${fileList[@]}"; do
-	if [[ -f "$f" ]]; then
+	if [[ -f "$f" && ! -L "$f" ]]; then
 		echo "Renaming $f to $f.old ..."
 		mv $f $f.old
 	fi
 	echo "Creating symlink $f pointing $cwd/$f ..."
-	ln -s $cwd/$f $f
+	ln -s -f $cwd/$f $f
 done
 for f in "${dirList[@]}"; do
-	if [[ -d "$f" ]]; then
+	if [[ -d "$f" && ! -L "$f" ]]; then
 		echo "Renaming $f to $f.old ..."
 		mv $f $f.old
 	fi
 	echo "Creating symlink $f pointing $cwd/$f ..."
-	ln -s $cwd/$f $f
+	ln -s -f $cwd/$f $f
 done
 
