@@ -1,0 +1,7 @@
+[user]
+	name = Youmin Ha
+	email = youmin78.ha@gmail.com
+[alias]
+	br = branch
+	co = checkout
+	st = status

@@ -8,7 +8,7 @@ cwd=`pwd`
 cd ~
 
 # List of files
-fileList=( .vimrc .bashrc )
+fileList=( .bashrc .gitconfig .vimrc )
 dirList=( .vim )
 
 # backup old dirs and files
