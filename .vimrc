@@ -18,7 +18,7 @@ set cst
 set mouse=a
 set nocsverb
 set encoding=utf-8
-set fileencodings=utf-8
+set fileencodings=utf-8,euc-kr
 set history=999
 set wmnu
 set lpl
