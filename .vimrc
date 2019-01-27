@@ -27,6 +27,7 @@ set scs
 set sc
 set sm
 set sel=exclusive
+set backspace=indent,eol,start
 "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -68,13 +69,13 @@ map ,0 :b!0<CR>
 map ,w :b!bw<CR>
 
 " turn off IME on command mode
-map <ESC> <ESC>:set imdisable<CR>
-nnoremap i :set noimd<CR>i
-nnoremap I :set noimd<CR>I
-nnoremap a :set noimd<CR>a
-nnoremap A :set noimd<CR>A
-nnoremap o :set noimd<CR>o
-nnoremap O :set noimd<CR>O    
+"map <ESC> <ESC>:set imdisable<CR>
+"nnoremap i :set noimd<CR>i
+"nnoremap I :set noimd<CR>I
+"nnoremap a :set noimd<CR>a
+"nnoremap A :set noimd<CR>A
+"nnoremap o :set noimd<CR>o
+"nnoremap O :set noimd<CR>O    
 
 " shortcuts
 map <F1> v]}zf
