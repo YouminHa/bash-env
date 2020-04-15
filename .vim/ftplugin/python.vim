@@ -1,9 +1,10 @@
 " Python specific settings.
 
 syntax on
+setlocal autoindent
 setlocal smartindent
 setlocal expandtab softtabstop=4 shiftwidth=4 tabstop=8
-"set formatoptions=croql
+set formatoptions=croql
 nmap <F5> :w <CR> :!clear; python3 % <CR>
 nmap <F6> :w <CR> :!python3 % 
 " set foldmethod=indent

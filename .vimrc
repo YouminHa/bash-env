@@ -11,6 +11,7 @@ set showmode					" show current mode in the last line
 set showcmd						" show command in the last line
 
 " indent
+"set smartindent					" no use usually (should be set with autoindent)
 set autoindent					" automatic indent
 set tabstop=8 softtabstop=8 shiftwidth=8  " Shift indent width
 set noexpandtab					" don't change tab to space
@@ -114,4 +115,7 @@ let Tlist_Exit_OnlyWindow = 1
 "let Tlist_Ctags_Cmd = "mkctags.sh"
 let Tlist_Display_Prototype = 0
 
-filetype plugin on
+
+" enable filetype detection
+filetype indent plugin on
+
