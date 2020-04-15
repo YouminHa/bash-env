@@ -1,6 +1,5 @@
 " Vim color file
 " Maintainer: blueisle
-" Last Change:	2009 Feb 10
 " grey on black
 " optimized for TFT panels
 " $Revision: 1.1 $
@@ -40,7 +39,7 @@ highlight StatusLine ctermfg=Blue	    ctermbg=White
 highlight Statement  ctermfg=Yellow			            cterm=NONE
 highlight Type						                    cterm=NONE
 
-" For vim 5 or lower version
+" For vim < 6.0
 if has("unix")
   if v:version<600
     highlight Normal  ctermfg=LightGrey	    ctermbg=Black	cterm=NONE	guifg=Grey80      guibg=Black	gui=NONE

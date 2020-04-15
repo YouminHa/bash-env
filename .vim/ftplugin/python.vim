@@ -1,14 +1,11 @@
 " Python specific settings.
 
-setlocal tabstop=2
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal expandtab
-setlocal autoindent
-setlocal formatoptions=croql
-filetype indent on
-nmap <F5> :w <CR> :!clear; python % <CR>
-nmap <F6> :w <CR> :!python % 
+syntax on
+setlocal smartindent
+setlocal expandtab softtabstop=4 shiftwidth=4 tabstop=8
+"set formatoptions=croql
+nmap <F5> :w <CR> :!clear; python3 % <CR>
+nmap <F6> :w <CR> :!python3 % 
 " set foldmethod=indent
 let python_highlight_all=1
 

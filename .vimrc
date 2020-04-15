@@ -1,44 +1,53 @@
 " .vimrc
 
-set number
-set ruler                      "show location of curser on status bar
-set tabstop=4
-set shiftwidth=4               "Shift indent width"
-set keywordprg=man\ -a         "command mapping (K --> man)
-set smartindent
-set cindent 
-set autoindent
-set noexpandtab
-set list
-set listchars=tab:.\ ,trail:`
-set incsearch
-set csprg=/usr/bin/cscope
-set csto=0
-set cst
-set mouse=a
-set nocsverb
+""" general vim options
+" http://vimdoc.sourceforge.net/htmldoc/options.html
+
+" interface
+set number						" show line numbers
+set ruler						" show location of curser on status bar
+set visualbell					" visual bell on error
+set showmode					" show current mode in the last line
+set showcmd						" show command in the last line
+
+" indent
+set autoindent					" automatic indent
+set tabstop=8 softtabstop=8 shiftwidth=8  " Shift indent width
+set noexpandtab					" don't change tab to space
+
+" whitespaces
+set list						" show whitespaces with special chars
+set listchars=tab:⇥\ ,trail:°	" whitespace-replacing characters
+
+" search
+set incsearch					" incremental search when using /{keyword}
+set ignorecase					" case-insensitive search
+set smartcase					" override ignorecase when search keyword contains uppercase chararcters
+set hlsearch					" highlight previous search pattern
+
+" editor
+set selection=inclusive			" visual selection includes the cursor character
+set history=999					" rollback history
+set showmatch					" show matched brackets
+set backspace=indent,eol,start	" backspace allowing
+set mouse=a						" mouse mode: use all modes
+set keywordprg=man\ -a			" command mapping (shift+K --> man)
+set wildmenu					" use tab to explore candidates in command mode
+set wildmode=longest:list,full	" wildmenu mode
+
+" other options
 set encoding=utf-8
 set fileencodings=utf-8,euc-kr
-set history=999
-set wmnu
-set lpl
-set ic
-set scs
-set sc
-set sm
-set sel=exclusive
-set backspace=indent,eol,start
+set loadplugins					" load plugins
+
 "au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+" set cursor position to the last-changed place
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \   exe "norm g`\"" |
 \ endif
 
-"set tags+=~/young_v.vws/limo-kernel/buildroot/project_build_arm/Mirage/linux-2.6.21.1/tags
-
-abbr #b /*********************************************************
-abbr #e *********************************************************/
-
+" color scheme
 color blueisle
 
 "if $LANG[0] == 'k' && $LANG[1] == 'o'
@@ -46,16 +55,30 @@ color blueisle
 "endif
 
 if &t_Co > 2 || has("gui_running")
-syntax on
-set hlsearch
+	syntax on
 endif
 
+" 8 color xterm setting
 if &term=="xterm"
-set t_Co=8
+set t_Co=8		" 8 colors
 set t_Sb=^[[4%dm
 set t_Sf=^[[3%dm
 endif
 
+
+" turn off IME on command mode
+"map <ESC> <ESC>:set imdisable<CR>
+"nnoremap i :set noimd<CR>i
+"nnoremap I :set noimd<CR>I
+"nnoremap a :set noimd<CR>a
+"nnoremap A :set noimd<CR>A
+"nnoremap o :set noimd<CR>o
+"nnoremap O :set noimd<CR>O    
+
+""" hotkeys
+map <F1> v]}zf
+
+" buffer hotkeys
 map ,1 :b!1<CR>
 map ,2 :b!2<CR>
 map ,3 :b!3<CR>
@@ -68,24 +91,12 @@ map ,9 :b!9<CR>
 map ,0 :b!0<CR>
 map ,w :b!bw<CR>
 
-" turn off IME on command mode
-"map <ESC> <ESC>:set imdisable<CR>
-"nnoremap i :set noimd<CR>i
-"nnoremap I :set noimd<CR>I
-"nnoremap a :set noimd<CR>a
-"nnoremap A :set noimd<CR>A
-"nnoremap o :set noimd<CR>o
-"nnoremap O :set noimd<CR>O    
-
-" shortcuts
-map <F1> v]}zf
-
-" tab control
+" tab control hotkeys
 nnoremap <silent> <F2> :tabnew<CR>
 nnoremap <silent> <F3> :tabprev<CR>
 nnoremap <silent> <F4> :tabnext<CR>
 
-" trinity
+" trinity hotkeys
 nnoremap <silent> <F5> :TagExplorer<CR>
 nnoremap <silent> <F6> :BufExplorer<CR>
 nnoremap <silent> <F7> :Tlist<CR>
@@ -102,6 +113,5 @@ let Tlist_Exit_OnlyWindow = 1
 "let Tlist_Auto_Update = 1
 "let Tlist_Ctags_Cmd = "mkctags.sh"
 let Tlist_Display_Prototype = 0
-
 
 filetype plugin on
