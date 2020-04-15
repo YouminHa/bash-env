@@ -18,7 +18,7 @@ set noexpandtab					" don't change tab to space
 
 " whitespaces
 set list						" show whitespaces with special chars
-set listchars=tab:⇥\ ,trail:°	" whitespace-replacing characters
+set listchars=tab:⇥\ ,trail:˽	" whitespace-replacing characters
 
 " search
 set incsearch					" incremental search when using /{keyword}
