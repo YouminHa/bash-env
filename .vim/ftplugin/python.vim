@@ -2,7 +2,6 @@
 
 syntax on
 setlocal autoindent
-setlocal smartindent
 setlocal expandtab softtabstop=4 shiftwidth=4 tabstop=8
 set formatoptions=croql
 nmap <F5> :w <CR> :!clear; python3 % <CR>
