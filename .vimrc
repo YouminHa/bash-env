@@ -4,37 +4,37 @@
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " interface
-set number						" show line numbers
-set ruler						" show location of curser on status bar
-set visualbell					" visual bell on error
+set number					" show line numbers
+set ruler					" show location of curser on status bar
+set showcmd					" show command in the last line
 set showmode					" show current mode in the last line
-set showcmd						" show command in the last line
+set visualbell					" visual bell on error
 
 " indent
-"set smartindent					" no use usually (should be set with autoindent)
 set autoindent					" automatic indent
-set tabstop=8 softtabstop=8 shiftwidth=8  " Shift indent width
+"set smartindent				" not used usually (should be set with autoindent)
 set noexpandtab					" don't change tab to space
+set tabstop=8 softtabstop=4 shiftwidth=4	" Shift indent width
 
 " whitespaces
-set list						" show whitespaces with special chars
-set listchars=tab:⇥\ ,trail:˽	" whitespace-replacing characters
+set list					" show whitespaces with special chars
+set listchars=tab:⇥\ ,trail:˽			" whitespace-replacing characters
 
 " search
+set hlsearch					" highlight previous search pattern
 set incsearch					" incremental search when using /{keyword}
 set ignorecase					" case-insensitive search
 set smartcase					" override ignorecase when search keyword contains uppercase chararcters
-set hlsearch					" highlight previous search pattern
 
 " editor
-set selection=inclusive			" visual selection includes the cursor character
+set backspace=indent,eol,start			" backspace allowing
 set history=999					" rollback history
+set keywordprg=man\ -a				" command mapping (shift+K --> man)
+set mouse=a					" mouse mode: use all modes
+set selection=inclusive				" visual selection includes the cursor character
 set showmatch					" show matched brackets
-set backspace=indent,eol,start	" backspace allowing
-set mouse=a						" mouse mode: use all modes
-set keywordprg=man\ -a			" command mapping (shift+K --> man)
 set wildmenu					" use tab to explore candidates in command mode
-set wildmode=longest:list,full	" wildmenu mode
+set wildmode=longest:list,full			" wildmenu mode
 
 " other options
 set encoding=utf-8
@@ -61,7 +61,7 @@ endif
 
 " 8 color xterm setting
 if &term=="xterm"
-set t_Co=8		" 8 colors
+set t_Co=8					" 8 colors
 set t_Sb=^[[4%dm
 set t_Sf=^[[3%dm
 endif
@@ -74,7 +74,7 @@ endif
 "nnoremap a :set noimd<CR>a
 "nnoremap A :set noimd<CR>A
 "nnoremap o :set noimd<CR>o
-"nnoremap O :set noimd<CR>O    
+"nnoremap O :set noimd<CR>O
 
 """ hotkeys
 map <F1> v]}zf
