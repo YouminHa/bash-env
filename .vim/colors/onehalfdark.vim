@@ -33,7 +33,7 @@ let s:fg          = s:white
 let s:bg          = s:black
 
 let s:comment_fg  = { "gui": "#5c6370", "cterm": "243" }
-let s:gutter_bg   = { "gui": "#282c34", "cterm": "236" }
+let s:gutter_bg   = { "gui": "#282c34", "cterm": "234" }
 let s:gutter_fg   = { "gui": "#919baa", "cterm": "247" }
 
 let s:cursor_line = { "gui": "#313640", "cterm": "237" }
@@ -137,7 +137,8 @@ call s:h("Statement", s:purple, "", "")
 call s:h("Conditional", s:purple, "", "")
 call s:h("Repeat", s:purple, "", "")
 call s:h("Label", s:purple, "", "")
-call s:h("Operator", s:fg, "", "")
+"call s:h("Operator", s:fg, "", "")
+call s:h("Operator", s:purple, "", "")
 call s:h("Keyword", s:red, "", "")
 call s:h("Exception", s:purple, "", "")
 
@@ -155,7 +156,8 @@ call s:h("Typedef", s:yellow, "", "")
 call s:h("Special", s:blue, "", "")
 call s:h("SpecialChar", s:fg, "", "")
 call s:h("Tag", s:fg, "", "")
-call s:h("Delimiter", s:fg, "", "")
+"call s:h("Delimiter", s:fg, "", "")
+call s:h("Delimiter", s:purple, "", "")
 call s:h("SpecialComment", s:fg, "", "")
 call s:h("Debug", s:fg, "", "")
 call s:h("Underlined", s:fg, "", "")
