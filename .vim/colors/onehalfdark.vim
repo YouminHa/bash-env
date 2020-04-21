@@ -25,13 +25,14 @@ let s:yellow      = { "gui": "#e5c07b", "cterm": "180" }
 let s:blue        = { "gui": "#61afef", "cterm": "75"  }
 let s:purple      = { "gui": "#c678dd", "cterm": "176" }
 let s:cyan        = { "gui": "#56b6c2", "cterm": "73"  }
-let s:white       = { "gui": "#dcdfe4", "cterm": "188" }
 let s:darkgray    = { "gui": "#3a3a3a", "cterm": "237" }
+"let s:white       = { "gui": "#dcdfe4", "cterm": "188" }
+let s:white       = { "gui": "#dcdfe4", "cterm": "253" }
 
 let s:fg          = s:white
 let s:bg          = s:black
 
-let s:comment_fg  = { "gui": "#5c6370", "cterm": "241" }
+let s:comment_fg  = { "gui": "#5c6370", "cterm": "243" }
 let s:gutter_bg   = { "gui": "#282c34", "cterm": "236" }
 let s:gutter_fg   = { "gui": "#919baa", "cterm": "247" }
 

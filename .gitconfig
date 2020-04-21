@@ -5,7 +5,7 @@
 	br = branch
 	co = checkout
 	fe = fetch
-	rb = rebase -i
+	rb = rebase
 	st = status
 [core]
 	excludesfile = ~/.gitignore
