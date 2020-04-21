@@ -4,4 +4,8 @@
 [alias]
 	br = branch
 	co = checkout
+	fe = fetch
+	rb = rebase -i
 	st = status
+[core]
+	excludesfile = ~/.gitignore
