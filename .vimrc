@@ -4,44 +4,43 @@
 " http://vimdoc.sourceforge.net/htmldoc/options.html
 
 " interface
-set number					" show line numbers
-set ruler					" show location of curser on status bar
-set showcmd					" show command in the last line
-set showmode					" show current mode in the last line
-set visualbell					" visual bell on error
+set number                                      " show line numbers
+set ruler                                       " show location of curser on status bar
+set showcmd                                     " show command in the last line
+set showmode                                    " show current mode in the last line
+set visualbell                                  " visual bell on error
 
 " indent
-set autoindent					" automatic indent
-"set smartindent				" not used usually (should be set with autoindent)
-set noexpandtab					" don't change tab to space
-set tabstop=8 softtabstop=4 shiftwidth=4	" Shift indent width
+set autoindent                                  " automatic indent
+"set smartindent                                " not used usually (should be set with autoindent)
+set noexpandtab                                 " don't change tab to space
+set tabstop=8 softtabstop=8 shiftwidth=8        " Shift indent width
 
 " whitespaces
-set list					" show whitespaces with special chars
-set listchars=tab:⇥\ ,trail:˽			" whitespace-replacing characters
+set list                                        " show whitespaces with special chars
+set listchars=tab:⇥\ ,trail:˽                   " whitespace-replacing characters
 
 " search
-set hlsearch					" highlight previous search pattern
-set incsearch					" incremental search when using /{keyword}
-set ignorecase					" case-insensitive search
-set smartcase					" override ignorecase when search keyword contains uppercase chararcters
+set hlsearch                                    " highlight previous search pattern
+set incsearch                                   " incremental search when using /{keyword}
+set ignorecase                                  " case-insensitive search
+set smartcase                                   " override ignorecase when search keyword contains uppercase chararcters
 
 " editor
-set backspace=indent,eol,start			" backspace allowing
-set history=999					" rollback history
-set keywordprg=man\ -a				" command mapping (shift+K --> man)
-set mouse=a					" mouse mode: use all modes
-set selection=inclusive				" visual selection includes the cursor character
-set showmatch					" show matched brackets
-set wildmenu					" use tab to explore candidates in command mode
-set wildmode=longest:list,full			" wildmenu mode
+set backspace=indent,eol,start                  " backspace allowing
+set history=999                                 " rollback history
+set keywordprg=man\ -a                          " command mapping (shift+K --> man)
+set mouse=a                                     " mouse mode: use all modes
+set selection=inclusive                         " visual selection includes the cursor character
+set showmatch                                   " show matched brackets
+set wildmenu                                    " use tab to explore candidates in command mode
+set wildmode=longest:list,full                  " wildmenu mode
 
 " other options
 set encoding=utf-8
-set fileencodings=utf-8,euc-kr
-set loadplugins					" load plugins
+set fileencodings=utf-8
+set loadplugins                                 " load plugins
 
-"au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 " set cursor position to the last-changed place
 au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -55,67 +54,49 @@ color blueisle
 "set fileencoding=korea
 "endif
 
+" color syntax on
 if &t_Co > 2 || has("gui_running")
-	syntax on
+    syntax on
 endif
 
 " 8 color xterm setting
 if &term=="xterm"
-set t_Co=8					" 8 colors
-set t_Sb=^[[4%dm
-set t_Sf=^[[3%dm
+    set t_Co=8   " 8 colors
+    set t_Sb=^[[4%dm
+    set t_Sf=^[[3%dm
 endif
-
-
-" turn off IME on command mode
-"map <ESC> <ESC>:set imdisable<CR>
-"nnoremap i :set noimd<CR>i
-"nnoremap I :set noimd<CR>I
-"nnoremap a :set noimd<CR>a
-"nnoremap A :set noimd<CR>A
-"nnoremap o :set noimd<CR>o
-"nnoremap O :set noimd<CR>O
-
-""" hotkeys
-map <F1> v]}zf
-
-" buffer hotkeys
-map ,1 :b!1<CR>
-map ,2 :b!2<CR>
-map ,3 :b!3<CR>
-map ,4 :b!4<CR>
-map ,5 :b!5<CR>
-map ,6 :b!6<CR>
-map ,7 :b!7<CR>
-map ,8 :b!8<CR>
-map ,9 :b!9<CR>
-map ,0 :b!0<CR>
-map ,w :b!bw<CR>
-
-" tab control hotkeys
-nnoremap <silent> <F2> :tabnew<CR>
-nnoremap <silent> <F3> :tabprev<CR>
-nnoremap <silent> <F4> :tabnext<CR>
-
-" trinity hotkeys
-nnoremap <silent> <F5> :TagExplorer<CR>
-nnoremap <silent> <F6> :BufExplorer<CR>
-nnoremap <silent> <F7> :Tlist<CR>
-nmap <F8> :TrinityToggleAll<CR>
-nmap <F9> :TrinityToggleSourceExplorer<CR>
-nmap <F10> :TrinityToggleTagList<CR>
-nmap <F11> :TrinityToggleNERDTree<CR>
-
-" Tlist options
-let Tlist_Auto_Open = 1
-let Tlist_Show_One_File = 1
-let Tlist_Sort_Type = "name"
-let Tlist_Exit_OnlyWindow = 1
-"let Tlist_Auto_Update = 1
-"let Tlist_Ctags_Cmd = "mkctags.sh"
-let Tlist_Display_Prototype = 0
-
 
 " enable filetype detection
 filetype indent plugin on
 
+
+""" vim-plug plugins
+" Run :PlugInstall to install specified plugins
+" More info: https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plug')
+Plug 'airblade/vim-gitgutter'                   " show git changed lines left on the line number
+Plug 'ludovicchabant/vim-gutentags'             " make tags automatically
+Plug 'majutsushi/tagbar'                        " ctags info (like taglist)
+Plug 'scrooloose/nerdtree'                      " nerdtree file explorer
+Plug 'Xuyuanp/nerdtree-git-plugin'              " nerdtree git plugin
+Plug 'scrooloose/syntastic'                     " show syntax error
+Plug 'tpope/vim-fugitive'                       " git wrapper
+Plug 'vim-airline/vim-airline'                  " beautify status bar
+Plug 'jlanzarotta/bufexplorer'                  " buffer explorer (recent opened files)
+call plug#end()
+
+""" plugin setup
+" [vim-airline]
+"let g:airline_powerline_fonts = 1              " Use powerline fonts (only works with truetype fonts)
+" [nerdtree]
+nnoremap <F7> :NERDTreeToggle<CR>
+let g:NERDTreeShowIgnoredStatus = 1
+" [tagbar]
+nnoremap <F8> :TagbarToggle<CR>
+autocmd VimEnter * nested :call tagbar#autoopen(1)      " auto open with supported file type
+let g:tagbar_zoomwidth = 0                      " when zoomed, fit the width to the longest tag
+" [bufexplorer]
+nnoremap <silent> <F9> :BufExplorer<CR>
+
+" set tags
+set tags=./tags;../tags;../../tags;../../../tags;../../../../tags
