@@ -48,7 +48,7 @@ au BufReadPost *
 \ endif
 
 " color scheme
-color blueisle
+color onehalfdark
 
 "if $LANG[0] == 'k' && $LANG[1] == 'o'
 "set fileencoding=korea
