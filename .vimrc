@@ -47,10 +47,6 @@ au BufReadPost *
 \   exe "norm g`\"" |
 \ endif
 
-" color syntax on
-if &t_Co > 2 || has("gui_running")
-endif
-
 " enable filetype detection
 filetype indent plugin on
 syntax on
