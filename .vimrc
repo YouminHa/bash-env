@@ -47,27 +47,23 @@ au BufReadPost *
 \   exe "norm g`\"" |
 \ endif
 
-" color scheme
-color onehalfdark
-
-"if $LANG[0] == 'k' && $LANG[1] == 'o'
-"set fileencoding=korea
-"endif
-
 " color syntax on
 if &t_Co > 2 || has("gui_running")
-    syntax on
-endif
-
-" 8 color xterm setting
-if &term=="xterm"
-    set t_Co=8   " 8 colors
-    set t_Sb=^[[4%dm
-    set t_Sf=^[[3%dm
 endif
 
 " enable filetype detection
 filetype indent plugin on
+syntax on
+
+" set tags
+set tags=./tags;../tags;../../tags;../../../tags;../../../../tags
+
+""" custom keymaps
+" include-search shortcut
+nnoremap <C-i> [<C-i>
+
+""" color scheme
+color onehalfdark
 
 
 """ vim-plug plugins
@@ -88,6 +84,7 @@ call plug#end()
 """ plugin setup
 " [vim-airline]
 "let g:airline_powerline_fonts = 1              " Use powerline fonts (only works with truetype fonts)
+let airline#extensions#tabline#disable_refresh = 0
 " [nerdtree]
 nnoremap <F7> :NERDTreeToggle<CR>
 let g:NERDTreeShowIgnoredStatus = 1
@@ -98,5 +95,3 @@ let g:tagbar_zoomwidth = 0                      " when zoomed, fit the width to 
 " [bufexplorer]
 nnoremap <silent> <F9> :BufExplorer<CR>
 
-" set tags
-set tags=./tags;../tags;../../tags;../../../tags;../../../../tags

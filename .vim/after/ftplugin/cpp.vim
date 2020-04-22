@@ -6,12 +6,11 @@ set expandtab                                   " tab to space
 set tabstop=2 softtabstop=2 shiftwidth=2
 set colorcolumn=100
 
-
 " ctags
-set tags=./tags,../tags,../../tags,../../../tags,../../../../../tags,../../../../../../tags
-set tags+=${HOME}/.vim/tags
+set tags=./tags;../tags;../../tags;../../../tags;../../../../../tags;../../../../../../tags;
+set tags+=${HOME}/.vim/tags;
 "set tags+=/usr/src/linux/tags,/usr/src/glib/tags,/usr/src/glibc/tags,/usr/include/tags
-set tags+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/tags
+"set tags+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/tags
 
 " cscope
 " http://vimdoc.sourceforge.net/htmldoc/if_cscop.html
@@ -50,5 +49,4 @@ if version >= 500
         endfunc
         nmap ,tj :call Tj()<cr>
 endif
-
 
