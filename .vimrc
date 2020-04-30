@@ -86,7 +86,8 @@ nnoremap <F7> :NERDTreeToggle<CR>
 let g:NERDTreeShowIgnoredStatus = 1
 " [tagbar]
 nnoremap <F8> :TagbarToggle<CR>
-autocmd VimEnter * nested :call tagbar#autoopen(1)      " auto open with supported file type
+nnoremap <C-k> :TagbarOpenAutoClose<CR>
+"autocmd VimEnter * nested :call tagbar#autoopen(1)      " auto open with supported file type
 let g:tagbar_zoomwidth = 0                      " when zoomed, fit the width to the longest tag
 " [bufexplorer]
 nnoremap <silent> <F9> :BufExplorer<CR>

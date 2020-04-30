@@ -4,6 +4,8 @@ syntax on
 setlocal autoindent
 setlocal expandtab softtabstop=4 shiftwidth=4 tabstop=8
 set formatoptions=croql
+set colorcolumn=100
+
 nmap <F5> :w <CR> :!clear; python3 % <CR>
 nmap <F6> :w <CR> :!python3 % 
 " set foldmethod=indent
