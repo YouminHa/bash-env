@@ -58,8 +58,9 @@ set tags=./tags;../tags;../../tags;../../../tags;../../../../tags
 " include-search shortcut
 nnoremap <C-i> [<C-i>
 
-""" color scheme
-color onehalfdark
+""" color theme
+""" replaced by vim-airline-themes
+"color onehalfdark
 
 
 """ vim-plug plugins
@@ -74,6 +75,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'              " nerdtree git plugin
 Plug 'scrooloose/syntastic'                     " show syntax error
 Plug 'tpope/vim-fugitive'                       " git wrapper
 Plug 'vim-airline/vim-airline'                  " beautify status bar
+Plug 'vim-airline/vim-airline-themes'           " color theme support by airline
+"Plug 'rakr/vim-one'                             " color theme reactive with the current terminal
 Plug 'jlanzarotta/bufexplorer'                  " buffer explorer (recent opened files)
 call plug#end()
 
@@ -81,9 +84,10 @@ call plug#end()
 " [vim-airline]
 "let g:airline_powerline_fonts = 1              " Use powerline fonts (only works with truetype fonts)
 let airline#extensions#tabline#disable_refresh = 0
+"let g:airline_theme='one'
 " [nerdtree]
 nnoremap <F7> :NERDTreeToggle<CR>
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 " [tagbar]
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <C-k> :TagbarOpenAutoClose<CR>
