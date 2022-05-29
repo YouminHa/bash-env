@@ -2,7 +2,8 @@
 
 syntax on
 setlocal autoindent
-setlocal expandtab softtabstop=4 shiftwidth=4 tabstop=8
+setlocal expandtab
+setlocal softtabstop=4 shiftwidth=4 tabstop=4
 set formatoptions=croql
 set colorcolumn=100
 
