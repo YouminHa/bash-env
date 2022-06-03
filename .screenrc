@@ -1,0 +1,7 @@
+vbell on
+defscrollback 30000
+startup_message off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.cW}%-w%{.rW}%n*%t%{-}%+w %= %c ${USER}"
+
